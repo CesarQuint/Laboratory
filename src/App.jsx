@@ -1,12 +1,12 @@
-
+import Carrousel from "./components/Carrousel"
 
 function App() {
  
 
   return (
-    <div >
-      <h1>Hola Como estas</h1>
-    </div>
+    <main >
+      <Carrousel/>
+    </main>
   )
 }
 
