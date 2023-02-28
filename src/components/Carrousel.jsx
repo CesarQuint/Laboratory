@@ -5,7 +5,8 @@ function Carrousel() {
     const [startArr,setStartArr]=useState(0)
     const [endArr,setEndArr]=useState(4)
     const [activeArr,setActiveArr]=useState([])
-    const [disabled,setDisabled]=useState(false)
+    const [disabledPlus,setDisabledPlus]=useState(false)
+    const [disabledLess,setDisabledLess]=useState(true)
 
     const exArr=[
         "a",
@@ -34,16 +35,18 @@ function Carrousel() {
     function handleRecorrer(event,value){
         if(value=="plus"){
             if(endArr>=exArr.length){
-                setDisabled(true)
+                setDisabledPlus(true)
                 return
             }
+            setDisabledLess(false)
             setStartArr(startArr+1)
             setEndArr(endArr+1)
         }else if(value=="less"){
             if(startArr<=0){
-                setDisabled(false)
+                setDisabledLess(true)
                 return
             }
+            setDisabledPlus(false)
             setStartArr(startArr-1)
             setEndArr(endArr-1)
         }
@@ -52,7 +55,7 @@ function Carrousel() {
 
   return (
     <div className='carouselContainer'>
-         <input type="button" disabled={!disabled} value="<" 
+         <input type="button" disabled={disabledLess} value="<" 
          onClick={event=>handleRecorrer(event,"less")}
          />
          <div className='limitArea'>
@@ -66,7 +69,7 @@ function Carrousel() {
            
          </div>
          <input type="button" value=">" 
-         disabled={disabled}
+         disabled={disabledPlus}
             onClick={event=>handleRecorrer(event,"plus")}
             />
        
