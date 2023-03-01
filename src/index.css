@@ -8,12 +8,12 @@ div.carouselContainer{
   display: flex;
   flex-flow: row wrap;
   background-color: brown;
-  padding: 1rem;
+  padding: 2rem;
 }
 div.card{
   border: 1px solid black;
-  padding: 1rem;
-  
+  padding: 1rem 2rem;
+  font-size: large;
 }
 input[type=button]{
   padding: 0.5rem;
@@ -25,6 +25,88 @@ div.limitArea{
   flex-flow: row nowrap;
   gap: 0.2rem;
   margin: 0 0.2rem;
+ width: 25%;
+ transition: all 2s ease;
+}
+
+div.dropContainer{
+  background-color: aquamarine;
+  padding: 1rem;
+}
+div.dropBody{
+  position: relative;
+  padding: 1rem;
+  background-color: antiquewhite;
+  display: inline-flex;
+  flex-flow: column wrap;
+  transition: all 1s ease;
+}
+section.options{
+  position: absolute !important;
+  background-color: antiquewhite;
+  display: none;
+  top: 3.5rem;
+  left: 0;
+  gap: 1rem;
+  flex-flow: column wrap;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  transition: all 1s ease;
+}
+section.options a{
+  text-decoration: none;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  padding: 0 0 1rem;
+}
+.show{
+  animation: despliegue 1s ease;
+  display: flex !important;
+}
+@keyframes despliegue {
+  0%{
+    opacity: 0%;
+    top:5rem;
+  }
+  100%{
+    opacity: 100%;
+    top:3.5rem;
+    left: 0rem;
+  }
+}
+section.select:hover{
+  cursor: pointer;
+}
+section.select{
+  display: flex;
+  flex-flow: row wrap;
+  gap :1rem;
+}
+section.select{
+  display: flex;
+  flex-flow: row wrap;
+  gap :0rem;
+}
+
+section.select2:hover~section.options {
+  animation: despliegue 1s ease;
+  display: flex !important;
+}
+section.options:hover{
+  display: flex !important;
+}
+
+@keyframes desvanecerce{
+  0%{
+    opacity: 100%;
+    top:3.5rem;
+    left: 0rem;
  
-  
+  }
+  100%{
+    opacity: 0%;
+    top:5rem;
+  }
 }

@@ -21,6 +21,7 @@ function Carrousel() {
     ]
     const itArr=exArr.slice(0,4)
 
+
     useEffect(()=>{
         if(!activeArr.length){
             setActiveArr(itArr)
