@@ -1,5 +1,6 @@
 import Carrousel from "./components/Carrousel"
 import Dropdown from "./components/Dropdown"
+import Algorithm from "./components/Algorithm"
 
 function App() {
  
@@ -8,6 +9,7 @@ function App() {
     <main >
       <Carrousel/>
       <Dropdown/>
+      <Algorithm/>
     </main>
   )
 }
