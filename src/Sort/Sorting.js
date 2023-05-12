@@ -54,6 +54,20 @@ const selectionSort = arreglo => {
     return arreglo;
   }
 
+//!!Notacion Big O 
+
+//* Analiza el algoritmo desde 2 perspectivas , 1.-Uso de memoria ,2.- Velocidad 
+
+//* Para poder clasificar las formas en que crece los algoritmos dependiendo de la entrada usamos la notacion asintotica 
+
+//TODO:Investigar notacion asintotica 
+
+//- Clasificaion de Complejidades
+//- Big O^1 etc....
+
+//* Cualquien funcion o linea de codigo se considera # 0(1) siempre y cuando no sea un ciclo ,no tenga recurcion o no se llame a una funcion que haga cualquiera de las 2 anteriores  
+
+//* Los ciclos que van incrementanddo por un numero constante se consideran 0(n) y siempre y cuando vaya iterando dependiendo de la entrada 
 export{
     bubbleSort,
     insertionSort,

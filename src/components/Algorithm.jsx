@@ -1,5 +1,5 @@
 import { useEffect,useState } from 'react'
-import {bubbleSort,insertionSort} from '../Sort'
+import {bubbleSort,insertionSort} from '../Sort/Sorting'
 
 function Algorithm() {
 
