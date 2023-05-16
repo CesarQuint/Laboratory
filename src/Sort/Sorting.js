@@ -67,9 +67,13 @@ const selectionSort = arreglo => {
 
 //* Cualquien funcion o linea de codigo se considera # 0(1) siempre y cuando no sea un ciclo ,no tenga recurcion o no se llame a una funcion que haga cualquiera de las 2 anteriores  
 
-//* Los ciclos que van incrementanddo por un numero constante se consideran 0(n) y siempre y cuando vaya iterando dependiendo de la entrada 
+//* Los ciclos que van incrementanddo por un numero constante se consideran 0(n) , siempre y cuando vaya iterando dependiendo de la entrada 
+
+//*Cuando tenemos ciclos anidados la complejidad depende de la complejidad que tenemos del ciclo anidado llegando a 0(n^2) si es que solo es un ciclo anidado y asi subiendo susesivamente dependiendo de los ciclos anidados y que iteren basandose en la entrada 
+
+//* Si la entrada n se va multiplicando o dividiendo pasara a ser 0(log[log[n]]) 
 export{
-    bubbleSort,
+    bubbleSort, 
     insertionSort,
     selectionSort
 }
