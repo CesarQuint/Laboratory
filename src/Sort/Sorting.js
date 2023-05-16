@@ -72,6 +72,104 @@ const selectionSort = arreglo => {
 //*Cuando tenemos ciclos anidados la complejidad depende de la complejidad que tenemos del ciclo anidado llegando a 0(n^2) si es que solo es un ciclo anidado y asi subiendo susesivamente dependiendo de los ciclos anidados y que iteren basandose en la entrada 
 
 //* Si la entrada n se va multiplicando o dividiendo pasara a ser 0(log[log[n]]) 
+
+//!Algoritmos Complejos ,su uso es mejor cuando el conjunto de datos es mayor ,regularmente es la fragmentacion del consjunto en subconjuntos 
+
+//!Shell Sort
+
+//*Este algoritmo tiene 2 posibles implementaciones GAPS Fijos  y otra en que estos se calculan de forma dinamica a partir del conjunto de entrada 
+
+//TODO: Investigar secuencia  GAP 
+
+//-El siguiente ejemplo se realiza con una secuencia corta de solo 3 elementos (5,3,1)
+
+const shellSort = arr => {
+  const gaps = [5, 3, 1];
+  for ( let g = 0; g < gaps.length; ++g ) {
+    for ( let i = gaps[ g ]; i < arr.length; ++i ) {
+      const temp = arr[ i ];
+      let j = i;
+      for ( ; j >= gaps[ g ] && arr[j - gaps[ g ] ] > temp; j -= gaps[ g ] ) {
+        arr[ j ] = arr[ j - gaps[ g ] ];
+      }
+      arr[ j ] = temp;
+    }
+  }
+
+  return arr;
+}
+
+
+const arr = [10, 4, 40, 32, 67, 12, 43, 31, 65, 1];
+const result = shellSort(arr);
+console.log(result);
+
+//!Shell Short con GAPS de forma dinamica
+const shellSortAlt = arr => {
+  const gap = arr.length;
+  let h = 1;
+  while ( h < gap / 3 ) {
+    h = 3 * h + 1;
+  }
+  while ( h >= 1 ) {
+    for ( let i = h; i < gap; i++ ) {
+      for ( let j = i; j >= h && arr[ j ] < arr[ j - h ];  j -= h ) {
+        [ arr[ j ], arr[ j - h ] ] = [ arr[ j - h ], arr[ j ] ];
+      }
+    }
+    h = ( h - 1 ) / 3;
+  }
+
+  return arr;
+}
+
+
+const arrAlt = [10, 4, 40, 32, 67, 12, 43, 31, 65, 1];
+const resultAlt = shellSortAlt(arrAlt);
+
+console.log(resultAlt);
+
+//!Mege Sort
+
+//-Este algoritmo subdivide el conjunto original en 2 se tamaño similar y al finalizar se mesclan estos 2 subconjuntos para obtener el conjunto final 
+
+const mergeSort = arr => {
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  const middle = parseInt(arr.length / 2) | 0;
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle);
+  const merge = (left, right) => {
+    const result = [];
+    let il = ir = 0;
+
+    while (il < left.length && ir < right.length) {
+      result.push( (left[il] < right[ir]) ? left[il++] : right[ir++] );
+    }
+
+    return [...result, ...left.slice(il), ...right.slice(ir)];
+  }
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+const arrMerg = [10, 4, 40, 32, 67, 12, 43, 31, 65, 1];
+const resultMerg = mergeSort(arrMerg);
+
+//!QuickSort
+
+//-A partir de un elemento cualquiera de la lista denominado pivote ,resitual el conjunto restante a ambos lados ,segun estos sean mayores o menores y esto se repite de forma recursiva ,quedando al final el conjunto ordenado.
+
+const quickSort = ( [ x = [], ...xs ] ) => {
+  return ( x.length === 0 ) ? [] : [...quickSort( xs.filter( y => y <= x ) ),x,...quickSort( xs.filter( y => y > x ) )];
+}
+
+const arrQuick = [10, 4, 40, 32, 67, 12, 43, 31, 65, 1];
+const resultQuick = quickSort(arrQuick);
+
+
 export{
     bubbleSort, 
     insertionSort,
