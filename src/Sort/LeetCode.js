@@ -15,7 +15,7 @@ const mix =(arr1,arr2)=>{
 }
 
 
-const str1 = "ABABAB"
+const str1 = "ABAB"
 const str2 = "ABAB"
 
 const divideReturn =(str1,str2)=>{
@@ -61,3 +61,19 @@ return a;
 // 6 != 4 
 // 6 > 4
 // 6 - 4 == 2
+
+const candies = [2,3,5,1,3] 
+const extraCandies = 2
+
+const kidsWithCandies = function(candies, extraCandies) {
+    const max = Math.max(...candies)
+    let result =[]
+
+    for (let index = 0; index < candies.length; index++) {
+        //!Es mejor utilizar .push que iterar el arreglo  solo si las entradas son Medianas y grandes pues nos ahorra tiempo 
+        candies[index] + extraCandies >= max ? result.push(true):result.push(false)
+    }
+
+    return result
+}
+console.log(kidsWithCandies(candies,extraCandies));
