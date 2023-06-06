@@ -31,3 +31,29 @@ var compress = function(chars) {
 //!Estudio sobre Map y sets
 
 const str2 = [0,1,0,3,12]
+
+const order = str =>{
+  let counter = []
+  if(str.length < 1)
+    return str
+  for (let index = str.length; index >= 0; index--) {
+    if(str[index]== 0){
+      counter = [...counter,0]
+    }
+  }
+  console.log(counter);
+  str = str.filter(obj => obj !== 0)
+  str = str.concat(counter)
+  return str
+}
+
+console.log(order(str2));
+
+let pointer = 0
+for (let i in nums){
+    if (nums[i] !== 0){
+        [nums[pointer], nums[i]] = [nums[i], nums[pointer]]
+        pointer++
+    }
+}
+return nums
