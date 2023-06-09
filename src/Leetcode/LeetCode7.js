@@ -61,3 +61,23 @@ var findMaxAverage = function (nums, k) {
 
 	return max / k;
 };
+
+let numeros = [1, 2, 3];
+const findCoincidences = nums => {
+	let set = new Set(nums);
+	set = [...set];
+	if (set.length < nums.length) return true;
+	return false;
+};
+
+let s = "anagram",
+	t = "nagaram";
+
+const reverseString = (str1, str2) => {
+	str1 = str1.split("");
+	str2 = str2.split("");
+	if () return true;
+	return false;
+};
+
+console.log(reverseString(s, t));
