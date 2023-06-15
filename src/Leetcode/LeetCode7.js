@@ -74,9 +74,9 @@ let s = "anagram",
 	t = "nagaram";
 
 const reverseString = (str1, str2) => {
-	str1 = str1.split("");
+	if (str1.length !== str2.length) return false;
 	str2 = str2.split("");
-	if () return true;
+	if (str1.includes()) return true;
 	return false;
 };
 
