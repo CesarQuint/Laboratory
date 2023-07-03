@@ -68,3 +68,17 @@ var topKFrequent = function (nums, k) {
 
 	return res
 }
+
+function ctes(amount, months) {
+	if (months === 0) return amount
+	let i = amount
+	for (let index = 0; index < months; index++) {
+		i = i + amount * 0.11 + amount
+	}
+	return i
+}
+console.log(ctes(600, 12))
+console.log(ctes(600, 12) / 12)
+console.log(600 * 12 * 0.15)
+console.log(600 * 12)
+console.log(ctes(600, 12) - 600 * 12 * 0.15)
