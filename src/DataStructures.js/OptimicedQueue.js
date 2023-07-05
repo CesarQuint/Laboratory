@@ -18,6 +18,18 @@ class Queue {
 	}
 
 	isEmpty() {
-		return this
+		return this.items.length === 0
+	}
+
+	peek() {
+		return this.items[this.front]
+	}
+
+	size() {
+		return this.rear - this.front
+	}
+
+	print() {
+		console.log(this.items)
 	}
 }
