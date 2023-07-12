@@ -14,7 +14,7 @@ const findCoincidences = (nums, k) => {
 		i++
 	}
 	let matriz = Object.entries(obj)
-	console.log(matriz)
+
 	// Ordena la matriz en orden descendente basándose en el valor
 	matriz = matriz.sort((a, b) => b[1] - a[1])
 
@@ -71,14 +71,11 @@ var topKFrequent = function (nums, k) {
 
 function ctes(amount, months) {
 	if (months === 0) return amount
-	let i = amount
+	let i = 0
 	for (let index = 0; index < months; index++) {
-		i = i + amount * 0.11 + amount
+		i = i + amount * 0.009 + amount
+		console.log(i)
 	}
 	return i
 }
-console.log(ctes(600, 12))
-console.log(ctes(600, 12) / 12)
-console.log(600 * 12 * 0.15)
-console.log(600 * 12)
-console.log(ctes(600, 12) - 600 * 12 * 0.15)
+console.log(ctes(600, 24))
