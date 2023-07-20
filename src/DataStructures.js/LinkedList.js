@@ -37,10 +37,19 @@ class LinkedList {
 			let curr = this.head
 			let listValues = ``
 			while (curr) {
-				listValues += `${curr.value}`
+				listValues += `${curr.value} `
 				curr = curr.next
 			}
 			console.log(listValues)
 		}
 	}
 }
+
+const list = new LinkedList()
+console.log('List is empty', list.isEmpty())
+console.log('List size', list.getSize())
+list.preprend(10)
+list.preprend(20)
+list.print()
+list.preprend(30)
+list.print()
