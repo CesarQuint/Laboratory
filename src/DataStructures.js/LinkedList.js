@@ -8,6 +8,7 @@ class Node {
 class LinkedList {
 	constructor() {
 		this.head = null
+		this.tail = null
 		this.size = 0
 	}
 
@@ -109,6 +110,18 @@ class LinkedList {
 			i++
 		}
 		return -1
+	}
+
+	reverse() {
+		let prev = null
+		let curr = this.head
+		while (curr) {
+			let next = curr.next
+			curr.next = prev
+			prev = curr
+			curr = next
+		}
+		this.head = prev
 	}
 
 	print() {
