@@ -1,0 +1,4 @@
+//*A tree is a hierarchical data structure that consists of nodes connected by edges
+//-A tree is a non-linear data structure ,compared to arrays ,linked list ,stacks and queue which are linear data structures
+//!Trees however ,owing to the nonlinear nature allow quicker and easier access to the data
+//! A TREE WILL NOT CONTAIN ANY LOOP OR CYCLE
