@@ -98,6 +98,8 @@ class BinarySearchTree {
 			this.inOrder(root.right)
 		}
 	}
+
+	postOrder(root) {}
 }
 
 const bst = new BinarySearchTree()
