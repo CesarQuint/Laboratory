@@ -1,5 +1,4 @@
 let nums = [4, 10, 23, 1, 0]
-console.log(nums.sort((a, b) => a - b))
 
 var threeSum = function (nums) {
 	nums.sort((a, b) => a - b)
@@ -54,3 +53,28 @@ function trap(height) {
 
 	return res
 }
+
+//!Fibonacci Sequence
+
+function fivonacci(number) {
+	if (number < 2) {
+		return -1
+	}
+	let arr = [0, 1]
+	while (arr.length !== number) {
+		arr.push(arr[arr.length - 1] + arr[arr.length - 2])
+	}
+	return arr
+}
+
+//!Factorial of a number
+
+const factorial = number => {
+	let total = number
+	for (let i = 1; i < number; i++) {
+		total *= number - i
+	}
+	return total
+}
+
+console.log(factorial(2))
