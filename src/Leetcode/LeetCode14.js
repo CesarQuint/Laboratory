@@ -45,3 +45,42 @@ function search(arr, target, leftIndex, rightIndex) {
 		return search(arr, target, middleIndex + 1, rightIndex)
 	}
 }
+
+const longestSubarray = nums => {
+	let longestSubarray = 0
+
+	let leftIndex = 0
+	let rightIndex = 0
+
+	let canDelete = true
+
+	while (rightIndex < nums.length) {
+		if (nums[rightIndex] === 1) {
+			rightIndex++
+		} else if (canDelete) {
+			rightIndex++
+			canDelete = false
+		} else if (nums[leftIndex] === 1) {
+			leftIndex++
+		} else {
+			leftIndex++
+			canDelete = true
+		}
+
+		longestSubarray = Math.max(longestSubarray, rightIndex - leftIndex - 1)
+	}
+
+	return longestSubarray
+}
+
+const largestAltitude = gain => {
+	let previous = 0
+	let biggest = 0
+
+	for (let i = 0; i < gain.length; i += 1) {
+		previous += gain[i]
+		if (previous > biggest) biggest = previous
+	}
+
+	return biggest
+}
